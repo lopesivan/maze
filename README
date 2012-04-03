@@ -1,0 +1,95 @@
+Maze Solving Program
+
+Compiling
+---------
+
+Type `make` in the folder the source is in. This will create all the executables
+for this program in the same folder.
+
+Testing
+-------
+
+./maze-solve [-short] [-all] <filename>
+
+Solves a maze file. With no options, the program will display the first
+solution step by step. With -short, the program displays the shortest route to
+the finish. With -all, the program displays all of the solutions to the maze, 
+one at a time.
+
+./maze-gen [-h <height>] [-w <width>] <filename>
+
+Generates a maze file. If either -h or -w are provided, the default height or
+width is overrided, respectively. This exports in a format that can be loaded 
+by maze-solve and maze-show.
+
+./maze-show <filename>
+
+Prints the maze described by a maze file formatted to display on a terminal.
+
+Example run:
+
+$ cat maze
+ 3  3
+ 1  2
+ 1  1
+13  5  3 
+ 9  3 10 
+12  4  6 
+
+$ ./maze-solve maze
++---+---+---+
+|           |
++---+---+   +
+|     F | S |
++   +   +   +
+|           |
++---+---+---+
+
++---+---+---+
+|         O |
++---+---+   +
+|     F | S |
++   +   +   +
+|           |
++---+---+---+
+
++---+---+---+
+|     O   O |
++---+---+   +
+|     F | S |
++   +   +   +
+|           |
++---+---+---+
+
++---+---+---+
+| O   O   O |
++---+---+   +
+|     F | S |
++   +   +   +
+|           |
++---+---+---+
+
++---+---+---+
+| X   X   X |
++---+---+   +
+|     F | S |
++   +   +   +
+|         O |
++---+---+---+
+
++---+---+---+
+| X   X   X |
++---+---+   +
+|     F | S |
++   +   +   +
+|     O   O |
++---+---+---+
+
+Solution found!
++---+---+---+
+|           |
++---+---+   +
+|     F | S |
++   +   +   +
+|     O   O |
++---+---+---+
